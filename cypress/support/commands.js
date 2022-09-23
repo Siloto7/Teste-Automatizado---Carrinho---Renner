@@ -8,6 +8,6 @@ Cypress.Commands.add("escreverInput", (elemento, texto) => {
     cy.get(elemento).type(texto);
  });
 
- Cypress.Commands.add("esperarExecucao", (tempo = 10000) => {
+ Cypress.Commands.add("esperarExecucao", (tempo = Cypress.config(defaultCommandTimeout)) => {
     cy.wait(tempo);
  });
