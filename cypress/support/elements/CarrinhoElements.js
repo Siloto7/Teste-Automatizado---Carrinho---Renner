@@ -8,7 +8,6 @@ class CarrinhoElements {
     finalizarCompra = () => '.AttributesModal_notOpacity__D1S4K > .ProductInformation_actions__dtxYo > .ProductInformation_actionBuy__8RfyL'
 
     botaoCarrinho = () => ':nth-child(4) > .ReactCartContent_content__tX41i > .ReactMiniCart_icon__jJnwk > .ic-sacola'
-
   }
   
   export default CarrinhoElements;

@@ -1,40 +1,46 @@
 
 /// <reference types="Cypress" />
 
-import CarrinhoElements from '../elements/CarrinhoElements'
-const carrinhoElements = new CarrinhoElements()
+import CarrinhoElements from '../elements/CarrinhoElements';
+const {
+    inputBuscar,
+    produtoSelecionado,
+    botaoComprar,
+    finalizarCompra,
+    botaoCarrinho
+} = new CarrinhoElements();
 
 class CarrinhoPage {
     acessarSite() {
-        cy.visit(Cypress.config("baseUrl"))
+        cy.visit(Cypress.config("baseUrl"));
     }
 
     clicarBusca() {
-        cy.wait(10000)
-        cy.get(carrinhoElements.inputBuscar()).click();
+        cy.esperarExecucao()
+        cy.clicarElemento(inputBuscar());
     }
 
     digitarProduto() {
-        cy.get(carrinhoElements.inputBuscar()).type("calça jeans{enter}");
-        
+        var produto = Cypress.config("produtoMock");
+        cy.escreverInput(inputBuscar(), produto);
     }
 
     calcaJeans() {
-        cy.wait(10000)
-        cy.get(carrinhoElements.produtoSelecionado()).click();
+        cy.esperarExecucao()
+        cy.clicarElemento(produtoSelecionado());
     }
 
     realizarCompra() {
-        cy.get(carrinhoElements.botaoComprar()).click();
+        cy.clicarElemento(botaoComprar());
     }
 
     escolherTamanho() {
-        cy.get(carrinhoElements.finalizarCompra()).click();
+        cy.clicarElemento(finalizarCompra());
     }
 
     produtoNaSacola() {
-        cy.wait(20000)
-        cy.get(carrinhoElements.botaoCarrinho()).click();
+        cy.esperarExecucao(20000)
+        cy.clicarElemento(botaoCarrinho());
     }
 }
 
