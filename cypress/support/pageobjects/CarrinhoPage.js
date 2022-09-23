@@ -2,6 +2,7 @@
 /// <reference types="Cypress" />
 
 import CarrinhoElements from '../elements/CarrinhoElements';
+
 const {
     inputBuscar,
     produtoSelecionado,
@@ -12,7 +13,8 @@ const {
 
 class CarrinhoPage {
     acessarSite() {
-        cy.visit(Cypress.config("baseUrl"));
+        const baseUrl = Cypress.config("baseUrl");
+        cy.visit(baseUrl);
     }
 
     clicarBusca() {

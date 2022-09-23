@@ -5,9 +5,9 @@ Cypress.Commands.add("clicarElemento", elemento => {
 });
 
 Cypress.Commands.add("escreverInput", (elemento, texto) => {
-    cy.get(elemento).type(texto)
+    cy.get(elemento).type(texto);
  });
 
  Cypress.Commands.add("esperarExecucao", (tempo = 10000) => {
-    cy.wait(tempo)
+    cy.wait(tempo);
  });

@@ -10,13 +10,17 @@ const {
     produtoNaSacola 
 } = new CarrinhoPage();
 
-Given("acesso o site Renner", () => { acessarSite(); });
-
-When("clico em buscar produtos", () => {
-    clicarBusca();
+Given("acesso o site Renner", () => { 
+    acessarSite(); 
 });
 
-And("digito calça jeans", () => { digitarProduto(); });
+When("clico em buscar produtos", () => { 
+    clicarBusca(); 
+});
+
+And("digito calça jeans", () => { 
+    digitarProduto(); 
+});
 
 
 And("seleciono uma calça", () => {
@@ -29,7 +33,6 @@ And("clico em comprar", () => {
 
 And("seleciono o tamanho", () => {
     escolherTamanho();
-
 });
 
 Then("tenho um produto no carrinho", () => {
