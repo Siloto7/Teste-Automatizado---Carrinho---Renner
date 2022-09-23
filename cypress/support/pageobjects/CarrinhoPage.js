@@ -21,7 +21,7 @@ class CarrinhoPage {
     }
 
     digitarProduto() {
-        var produto = Cypress.config("produtoMock");
+        const produto = Cypress.config("produtoMock");
         cy.escreverInput(inputBuscar(), produto);
     }
 
